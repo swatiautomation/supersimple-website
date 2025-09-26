@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Photography Website</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css"/>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px 10px;
+      text-align: center;
+    }
+    /* --- Navbar --- */
+    nav {
+      background: #333;
+      position: relative;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 10px 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      background: #333;
+      color: #fff;
+      border: none;
+      font-size: 24px;
+      padding: 10px 20px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+    }
+    /* --- Sections --- */
+    section {
+      padding: 40px 20px;
+    }
+    /* --- Services Cards --- */
+    .card {
+      position: relative;
+      padding: 40px 20px;
+      color: #fff;
+      border-radius: 10px;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      border-radius: 10px;
+    }
+    .card h3, .card p {
+      position: relative;
+      z-index: 1;
+    }
+    /* Gallery images */
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    /* Forms */
+    form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    form input, form textarea, form button {
+      padding: 12px;
+      font-size: 16px;
+    }
+    form button {
+      background: #222;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 20px;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: left;
+        background: #333;
+        width: 100%;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      nav ul li {
+        margin: 10px;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Photography</h1>
+    <p>Capturing Memories That Last Forever</p>
+  </header>
+
+  <nav>
+    <button class="menu-toggle">☰ Menu</button>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#enquiry">Enquiry</a></li>
+    </ul>
+  </nav>
+
+  <!-- Services Section with Swiper -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="swiper services-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide card" style="background-image: url('picture/552919861_1250144626915336_4117713290556486899_n.jpg');">
+          <h3>Event Photography</h3>
+          <p>We capture your special events with elegance and creativity.</p>
+        </div>
+        <div class="swiper-slide card" style="background-image: url('picture/520313448_1198208628775603_2475773152186309891_n.jpg');">
+          <h3>Birthday Parties</h3>
+          <p>Memorable moments from your birthday celebrations preserved forever.</p>
+        </div>
+        <div class="swiper-slide card" style="background-image: url('picture/551653007_1250143850248747_413375132109636575_n.jpg');">
+          <h3>Portraits</h3>
+          <p>Professional portrait sessions tailored to your style.</p>
+        </div>
+        <div class="swiper-slide card" style="background-image: url('picture/552919861_1250144626915336_4117713290556486899_n.jpg');">
+          <h3>Family Photos</h3>
+          <p>Beautiful family portraits that you’ll cherish for generations.</p>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Gallery Section with Swiper + Lightbox -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="swiper gallery-slider">
+      <div class="swiper-wrapper gallery">
+        <div class="swiper-slide">
+          <a href="picture/480553136_1101583295104804_1367013171470481480_n.jpg" data-lightbox="gallery" data-title="Sample Photo 1">
+            <img src="picture/480553136_1101583295104804_1367013171470481480_n.jpg" alt="Sample Photo 1">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="picture/520313448_1198208628775603_2475773152186309891_n.jpg" data-lightbox="gallery" data-title="Sample Photo 2">
+            <img src="picture/520313448_1198208628775603_2475773152186309891_n.jpg" alt="Sample Photo 2">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="picture/551653007_1250143850248747_413375132109636575_n.jpg" data-lightbox="gallery" data-title="Sample Photo 3">
+            <img src="picture/551653007_1250143850248747_413375132109636575_n.jpg" alt="Sample Photo 3">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="picture/551976366_1250058600257272_4599494629527340218_n.jpg" data-lightbox="gallery" data-title="Sample Photo 4">
+            <img src="picture/551976366_1250058600257272_4599494629527340218_n.jpg" alt="Sample Photo 4">
+          </a>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+   <!-- Enquiry Section -->
+  <section id="enquiry">
+    <h2>Enquiry Form</h2>
+    <form action="mailto:chinki.sharma73@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Enter your name" required>
+      <input type="tel" name="phone" placeholder="Enter your phone number" required>
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Submit Enquiry</button>
+    </form>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+     <p><strong>Email:</strong> chinki.sharma73@gmail.com</p>
+      <p><strong>Phone:</strong> +44 123 456 7890</p>
+  </section>
+
+ 
+
+  <footer>
+    <p>&copy; 2025 My Photography | All Rights Reserved</p>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+
+  <script>
+    // Toggle menu in mobile view
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("nav ul");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // Swiper for Services
+    const servicesSwiper = new Swiper(".services-slider", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: ".services-slider .swiper-button-next",
+        prevEl: ".services-slider .swiper-button-prev",
+      },
+      pagination: {
+        el: ".services-slider .swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+    // Swiper for Gallery
+    const gallerySwiper = new Swiper(".gallery-slider", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loop: true,
+      navigation: {
+        nextEl: ".gallery-slider .swiper-button-next",
+        prevEl: ".gallery-slider .swiper-button-prev",
+      },
+      pagination: {
+        el: ".gallery-slider .swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  </script>
+</body>
+</html>
