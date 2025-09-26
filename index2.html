@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Photography Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px 10px;
+      text-align: center;
+    }
+    /* --- Navbar --- */
+    nav {
+      background: #333;
+      position: relative;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 10px 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      background: #333;
+      color: #fff;
+      border: none;
+      font-size: 24px;
+      padding: 10px 20px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+    }
+    /* --- Sections --- */
+    section {
+      padding: 40px 20px;
+    }
+    /* --- Services --- */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      position: relative;
+      padding: 40px 20px;
+      color: #fff;
+      border-radius: 10px;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5); /* overlay */
+      border-radius: 10px;
+    }
+    .card h3, .card p {
+      position: relative;
+      z-index: 1;
+    }
+    /* --- Gallery --- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    /* --- Forms --- */
+    form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    form input, form textarea, form button {
+      padding: 12px;
+      font-size: 16px;
+    }
+    form button {
+      background: #222;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 20px;
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none; /* hide menu by default */
+        flex-direction: column;
+        text-align: left;
+        background: #333;
+        width: 100%;
+      }
+      nav ul.show {
+        display: flex; /* show menu when toggled */
+      }
+      nav ul li {
+        margin: 10px;
+      }
+      .menu-toggle {
+        display: block; /* show hamburger button */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Photography</h1>
+    <p>Capturing Memories That Last Forever</p>
+  </header>
+
+  <nav>
+    <button class="menu-toggle">☰ Menu</button>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#enquiry">Enquiry</a></li>
+    </ul>
+  </nav>
+
+  <!-- Services Section -->
+  <section id="section">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card" style="background-image: url('picture/552919861_1250144626915336_4117713290556486899_n.jpg');">
+        <h3>Event Photography</h3>
+        <p>We capture your special events with elegance and creativity.</p>
+      </div>
+      <div class="card" style="background-image: url('picture/520313448_1198208628775603_2475773152186309891_n.jpg');">
+        <h3>Birthday Parties</h3>
+        <p>Memorable moments from your birthday celebrations preserved forever.</p>
+      </div>
+      <div class="card" style="background-image: url('picture/551653007_1250143850248747_413375132109636575_n.jpg');">
+        <h3>Portraits</h3>
+        <p>Professional portrait sessions tailored to your style.</p>
+      </div>
+      <div class="card" style="background-image: url('picture/552919861_1250144626915336_4117713290556486899_n.jpg');">
+        <h3>Family Photos</h3>
+        <p>Beautiful family portraits that you’ll cherish for generations.</p>
+      </div>
+    </div>
+  </section>
+
+    <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="picture\480553136_1101583295104804_1367013171470481480_n.jpg" alt="Sample Photo 1">
+      <img src="picture\520313448_1198208628775603_2475773152186309891_n.jpg" alt="Sample Photo 2">
+      <img src="picture\551653007_1250143850248747_413375132109636575_n.jpg" alt="Sample Photo 3">
+      <img src="picture\551976366_1250058600257272_4599494629527340218_n.jpg" alt="Sample Photo 4">
+    </div>
+  </section>
+
+ <!-- Gallery Section -->
+<section id="gallery">
+ 
+  <button id="backBtn" style="display:none; margin-bottom: 10px; padding: 10px 15px;">Back to Services</button>
+  <div class="gallery" id="galleryContainer">
+    <!-- Images will be injected here dynamically -->
+  </div>
+</section>
+
+<script>
+  // Map service names to image arrays
+  const galleryData = {
+    "Event Photography": [
+      "picture/552919861_1250144626915336_4117713290556486899_n.jpg",
+      "picture/480553136_1101583295104804_1367013171470481480_n.jpg",
+      "picture/520313448_1198208628775603_2475773152186309891_n.jpg",
+      "picture/551976366_1250058600257272_4599494629527340218_n.jpg"
+    ],
+    "Birthday Parties": [
+      "picture/520313448_1198208628775603_2475773152186309891_n.jpg",
+      "picture/551976366_1250058600257272_4599494629527340218_n.jpg",
+      "picture/520313448_1198208628775603_2475773152186309891_n.jpg",
+      "picture/551976366_1250058600257272_4599494629527340218_n.jpg"
+    ],
+    "Portraits": [
+      "picture/551653007_1250143850248747_413375132109636575_n.jpg",
+      "picture/520313448_1198208628775603_2475773152186309891_n.jpg",
+      "picture/551976366_1250058600257272_4599494629527340218_n.jpg"
+    ],
+    "Family Photos": [
+      "picture/552919861_1250144626915336_4117713290556486899_n.jpg",
+      "picture/520313448_1198208628775603_2475773152186309891_n.jpg",
+      "picture/551976366_1250058600257272_4599494629527340218_n.jpg"
+    ]
+  };
+
+  const cards = document.querySelectorAll(".card");
+  const galleryContainer = document.getElementById("galleryContainer");
+  const backBtn = document.getElementById("backBtn");
+
+  // Function to display images for a selected category
+  function showGallery(category) {
+    galleryContainer.innerHTML = ""; // clear gallery
+    galleryData[category].forEach(imgSrc => {
+      const img = document.createElement("img");
+      img.src = imgSrc;
+      img.alt = category;
+      galleryContainer.appendChild(img);
+    });
+    backBtn.style.display = "inline-block";
+    document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
+  }
+
+  // Add click events to all cards
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const category = card.querySelector("h3").innerText;
+      if (galleryData[category]) {
+        showGallery(category);
+      }
+    });
+  });
+
+  // Back button functionality
+  backBtn.addEventListener("click", () => {
+    galleryContainer.innerHTML = ""; // clear gallery
+    backBtn.style.display = "none";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="mailto:chinki.sharma73@gmail.com" method="post" enctype="text/plain">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <input type="tel" name="phone" placeholder="Enter your phone number" required>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Enquiry Section -->
+  <section id="enquiry">
+    <h2>Enquiry Form</h2>
+    <form action="mailto:chinki.sharma73@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Enter your name" required>
+      <input type="tel" name="phone" placeholder="Enter your phone number" required>
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Submit Enquiry</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Photography | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Toggle menu in mobile view
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("nav ul");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>
