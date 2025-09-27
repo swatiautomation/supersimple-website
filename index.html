@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Frame Media Photography</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -42,6 +44,10 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: #120ed4;
     }
     /* Hamburger button */
     .menu-toggle {
@@ -110,6 +116,9 @@
       border: none;
       cursor: pointer;
     }
+    form button:hover {
+      background: #120ed4;
+    }
     #enquiry  #successMessage {
      display:none; 
     color: green; 
@@ -122,6 +131,22 @@
     text-align: center;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
+    .social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  font-size: 30px;
+  margin: 0 10px;
+  color: #333; /* Default color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #120ed4; /* Change hover color */
+}
+
     footer {
       background: #222;
       color: #fff;
@@ -304,20 +329,22 @@
 </a>
   </p>
   <p><strong>Phone:</strong> 0424919975</p>
+<div class="social-links">
+    <a href="https://www.facebook.com/YourPageHere" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/YourProfileHere" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/YourChannelHere" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
 </section>
 
-
- 
-
   <footer>
-    <p>&copy; 2025 Frame Media Photography | All Rights Reserved</p>
+    <p>&copy; 2025 Frame Media Photography </p>
+    <p>Based in Canberra, Australia</p>
   </footer>
 
   <!-- JS Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
-
-   <script>
+  <script>
   window.addEventListener("load", function() {
     // Ensure page starts at the very top
     window.scrollTo(0, 0);
@@ -372,4 +399,3 @@
   </script>
 </body>
 </html>
-
