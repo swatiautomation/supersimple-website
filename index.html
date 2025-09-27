@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Photography Website</title>
+  <title>Frame Media Photography</title>
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -102,12 +102,25 @@
     form input, form textarea, form button {
       padding: 12px;
       font-size: 16px;
+      border-radius: 10px;
     }
     form button {
       background: #222;
       color: #fff;
       border: none;
       cursor: pointer;
+    }
+    #enquiry  #successMessage {
+     display:none; 
+    color: green; 
+    margin-top: 20px; 
+    font-size: 1.3rem; 
+    font-weight: 700; 
+    background: #e6ffe6; 
+    padding: 15px 20px; 
+    border-radius: 8px; 
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
     footer {
       background: #222;
@@ -139,7 +152,7 @@
 </head>
 <body>
   <header>
-    <h1>My Photography</h1>
+    <h1>Frame Media Photography</h1>
     <p>Capturing Memories That Last Forever</p>
   </header>
 
@@ -170,7 +183,7 @@
           <h3>Portraits</h3>
           <p>Professional portrait sessions tailored to your style.</p>
         </div>
-        <div class="swiper-slide card" style="background-image: url('picture/552919861_1250144626915336_4117713290556486899_n.jpg');">
+        <div class="swiper-slide card" style="background-image: url('picture/520313448_1198208628775603_2475773152186309891_n.jpg');">
           <h3>Family Photos</h3>
           <p>Beautiful family portraits that you’ll cherish for generations.</p>
         </div>
@@ -206,6 +219,26 @@
             <img src="picture/551976366_1250058600257272_4599494629527340218_n.jpg" alt="Sample Photo 4">
           </a>
         </div>
+         <div class="swiper-slide">
+          <a href="picture/480553136_1101583295104804_1367013171470481480_n.jpg" data-lightbox="gallery" data-title="Sample Photo 1">
+            <img src="picture/480553136_1101583295104804_1367013171470481480_n.jpg" alt="Sample Photo 1">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="picture/520313448_1198208628775603_2475773152186309891_n.jpg" data-lightbox="gallery" data-title="Sample Photo 2">
+            <img src="picture/520313448_1198208628775603_2475773152186309891_n.jpg" alt="Sample Photo 2">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="picture/551653007_1250143850248747_413375132109636575_n.jpg" data-lightbox="gallery" data-title="Sample Photo 3">
+            <img src="picture/551653007_1250143850248747_413375132109636575_n.jpg" alt="Sample Photo 3">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="picture/551976366_1250058600257272_4599494629527340218_n.jpg" data-lightbox="gallery" data-title="Sample Photo 4">
+            <img src="picture/551976366_1250058600257272_4599494629527340218_n.jpg" alt="Sample Photo 4">
+          </a>
+        </div>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -213,28 +246,71 @@
     </div>
   </section>
 
-   <!-- Enquiry Section -->
-  <section id="enquiry">
-    <h2>Enquiry Form</h2>
-    <form action="mailto:chinki.sharma73@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Enter your name" required>
-      <input type="tel" name="phone" placeholder="Enter your phone number" required>
-      <input type="email" name="email" placeholder="Enter your email" required>
-      <button type="submit">Submit Enquiry</button>
-    </form>
-  </section>
+  <!-- Enquiry Section -->
+<section id="enquiry">
+  <h2>Enquiry Form</h2>
+  <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Replace with your access key -->
+    <input type="hidden" name="access_key" value="5a40802c-2dfb-44da-a1d7-c8386413eed5">
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-     <p><strong>Email:</strong> chinki.sharma73@gmail.com</p>
-      <p><strong>Phone:</strong> +44 123 456 7890</p>
-  </section>
+    <input type="text" name="name" placeholder="Enter your name" required>
+    <input type="tel" name="phone" placeholder="Enter your phone number" required>
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <textarea name="message" placeholder="Your message" required></textarea>
+
+    <!-- Optional: confirmation email to the user -->
+    <input type="hidden" name="replyto" value="email">
+
+    <button type="submit">Submit Enquiry</button>
+  </form>
+
+  <!-- Success message -->
+  <p id="successMessage" style="display:none; color:green; margin-top:10px;">
+    ✅ Thank you! Your enquiry has been sent.
+  </p>
+</section>
+
+<script>
+  const form = document.getElementById('enquiryForm');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form)
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        successMessage.style.display = "block";
+      } else {
+        alert("❌ Something went wrong. Please try again.");
+      }
+    }).catch(error => {
+      alert("❌ Error: " + error.message);
+    });
+  });
+</script>
+
+
+ <!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>
+    <strong>Email:</strong> 
+    <a href="mailto:framemediaphotography@gmail.com?subject=Inquiry%20from%20Website&body=Hello, I would like to know more about your services.">
+  framemediaphotography@gmail.com
+</a>
+  </p>
+  <p><strong>Phone:</strong> 0424919975</p>
+</section>
+
 
  
 
   <footer>
-    <p>&copy; 2025 My Photography | All Rights Reserved</p>
+    <p>&copy; 2025 Frame Media Photography | All Rights Reserved</p>
   </footer>
 
   <!-- JS Libraries -->
