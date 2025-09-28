@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <!-- Lightbox CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
 
   <style>
     body {
@@ -119,6 +122,7 @@
     form button:hover {
       background: #120ed4;
     }
+    #enquiry{ text-align: center; }
     #enquiry  #successMessage {
      display:none; 
     color: green; 
@@ -130,6 +134,15 @@
     border-radius: 8px; 
     text-align: center;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    #contact {
+      text-align: center;
+    }
+    #contact a {
+      color: #6865f3;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: cursive;
     }
     .social-links {
   margin-top: 15px;
@@ -144,8 +157,9 @@
 }
 
 .social-links a:hover {
-  color: #120ed4; /* Change hover color */
+  color: #6865f3;; /* Change hover color */
 }
+
 
     footer {
       background: #222;
@@ -276,17 +290,17 @@
   <h2>Enquiry Form</h2>
   <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
     <!-- Replace with your access key -->
-    <input type="hidden" name="access_key" value="5a40802c-2dfb-44da-a1d7-c8386413eed5">
+    <input type="hidden" name="access_key" value="d8fdde63-1eb2-4b07-be0c-ffbcd13a0a08">
 
     <input type="text" name="name" placeholder="Enter your name" required>
     <input type="tel" name="phone" placeholder="Enter your phone number" required>
     <input type="email" name="email" placeholder="Enter your email" required>
-    <textarea name="message" placeholder="Your message" required></textarea>
+    <textarea name="message" placeholder="Your message"></textarea>
 
     <!-- Optional: confirmation email to the user -->
     <input type="hidden" name="replyto" value="email">
 
-    <button type="submit">Submit Enquiry</button>
+    <button type="submit">Send Enquiry</button>
   </form>
 
   <!-- Success message -->
@@ -332,7 +346,6 @@
 <div class="social-links">
     <a href="https://www.facebook.com/YourPageHere" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://www.instagram.com/YourProfileHere" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/YourChannelHere" target="_blank"><i class="fab fa-youtube"></i></a>
   </div>
 </section>
 
