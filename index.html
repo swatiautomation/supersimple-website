@@ -21,6 +21,7 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
+ 
     }
     header {
       background: #222;
@@ -30,8 +31,11 @@
     }
     /* --- Navbar --- */
     nav {
-      background: #333;
-      position: relative;
+       position: sticky;
+    top: 0;
+      background:  #4A4A48;
+      z-index: 1000;
+    
     }
     nav ul {
       list-style: none;
@@ -44,13 +48,13 @@
       margin: 10px 20px;
     }
     nav ul li a {
-      color: #fff;
+      color: #F9F6F1;
       text-decoration: none;
       font-weight: bold;
     }
     nav ul li a:hover {
       text-decoration: underline;
-      color: #120ed4;
+      color: #D4A373;
     }
     /* Hamburger button */
     .menu-toggle {
@@ -67,6 +71,9 @@
     /* --- Sections --- */
     section {
       padding: 40px 20px;
+       background-color: #FFEFF1; /* Dusty Rose */
+  color: #2C2C2C; /* Deep Charcoal */
+  font-family: 'Playfair Display', serif; /* headings */
     }
     /* --- Services Cards --- */
     .card {
@@ -114,13 +121,13 @@
       border-radius: 10px;
     }
     form button {
-      background: #222;
-      color: #fff;
+      background:  #D4A373;
+      color: #F9F6F1;
       border: none;
       cursor: pointer;
     }
     form button:hover {
-      background: #120ed4;
+      background: #C18F63;
     }
     #enquiry{ text-align: center; }
     #enquiry  #successMessage {
@@ -139,10 +146,9 @@
       text-align: center;
     }
     #contact a {
-      color: #6865f3;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: cursive;
+      color: #0f0b05;
+      
+      font-weight: bold
     }
     .social-links {
   margin-top: 15px;
@@ -157,7 +163,7 @@
 }
 
 .social-links a:hover {
-  color: #6865f3;; /* Change hover color */
+  color: #C18F63; /* Change hover color */
 }
 
 
@@ -168,6 +174,75 @@
       padding: 15px 0;
       margin-top: 20px;
     }
+
+    /* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.portfolio-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.portfolio-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+.about-photo {
+  flex: 1;
+  max-width: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.about-text {
+  flex: 2;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.about-text h3 {
+  margin-top: 0;
+  color: #333;
+}
+  /* Smooth Scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.photo-item {
+  overflow: hidden;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.photo-item img:hover {
+  transform: scale(1.05);
+}
+
+
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
       nav ul {
@@ -192,7 +267,7 @@
 <body>
   <header>
     <h1>Frame Media Photography</h1>
-    <p>Capturing Memories That Last Forever</p>
+    <p> <i>Capturing Memories That Last Forever</i> </p>
   </header>
 
   <nav>
@@ -202,6 +277,8 @@
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#enquiry">Enquiry</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
     </ul>
   </nav>
 
@@ -214,7 +291,7 @@
           <h3>Event Photography</h3>
           <p>We capture your special events with elegance and creativity.</p>
         </div>
-        <div class="swiper-slide card" style="background-image: url('picture/520313448_1198208628775603_2475773152186309891_n.jpg');">
+        <div class="swiper-slide card" style="background-image: url('picture/PHOTO1 (3).jpg');">
           <h3>Birthday Parties</h3>
           <p>Memorable moments from your birthday celebrations preserved forever.</p>
         </div>
@@ -222,7 +299,7 @@
           <h3>Portraits</h3>
           <p>Professional portrait sessions tailored to your style.</p>
         </div>
-        <div class="swiper-slide card" style="background-image: url('picture/520313448_1198208628775603_2475773152186309891_n.jpg');">
+        <div class="swiper-slide card" style="background-image: url('picture/event3.jpg');">
           <h3>Family Photos</h3>
           <p>Beautiful family portraits that you’ll cherish for generations.</p>
         </div>
@@ -234,7 +311,7 @@
   </section>
 
   <!-- Gallery Section with Swiper + Lightbox -->
-  <section id="gallery">
+   <section id="gallery">
     <h2>Gallery</h2>
     <div class="swiper gallery-slider">
       <div class="swiper-wrapper gallery">
@@ -258,24 +335,52 @@
             <img src="picture/551976366_1250058600257272_4599494629527340218_n.jpg" alt="Sample Photo 4">
           </a>
         </div>
-         <div class="swiper-slide">
-          <a href="picture/480553136_1101583295104804_1367013171470481480_n.jpg" data-lightbox="gallery" data-title="Sample Photo 1">
-            <img src="picture/480553136_1101583295104804_1367013171470481480_n.jpg" alt="Sample Photo 1">
+        
+          <div class="swiper-slide">
+          <a href="picture/event.jpg" data-lightbox="gallery" data-title="Sample Photo 1">
+            <img src="picture/event.jpg" alt="Sample Photo 1">
           </a>
         </div>
         <div class="swiper-slide">
-          <a href="picture/520313448_1198208628775603_2475773152186309891_n.jpg" data-lightbox="gallery" data-title="Sample Photo 2">
-            <img src="picture/520313448_1198208628775603_2475773152186309891_n.jpg" alt="Sample Photo 2">
+          <a href="picture/event1.jpg" data-lightbox="gallery" data-title="Sample Photo 2">
+            <img src="picture/event1.jpg" alt="Sample Photo 2">
           </a>
         </div>
         <div class="swiper-slide">
-          <a href="picture/551653007_1250143850248747_413375132109636575_n.jpg" data-lightbox="gallery" data-title="Sample Photo 3">
-            <img src="picture/551653007_1250143850248747_413375132109636575_n.jpg" alt="Sample Photo 3">
+          <a href="picture/prego.jpg" data-lightbox="gallery" data-title="Sample Photo 3">
+            <img src="picture/prego.jpg" alt="Sample Photo 3">
           </a>
         </div>
         <div class="swiper-slide">
-          <a href="picture/551976366_1250058600257272_4599494629527340218_n.jpg" data-lightbox="gallery" data-title="Sample Photo 4">
-            <img src="picture/551976366_1250058600257272_4599494629527340218_n.jpg" alt="Sample Photo 4">
+          <a href="picture/prego1.jpg" data-lightbox="gallery" data-title="Sample Photo 4">
+            <img src="picture/prego1.jpg" alt="Sample Photo 4">
+          </a>
+        </div>
+          <div class="swiper-slide">
+          <a href="picture/event3.jpg" data-lightbox="gallery" data-title="Sample Photo 4">
+            <img src="picture/event3.jpg" alt="Sample Photo 4">
+          </a>
+        </div>
+
+
+          <div class="swiper-slide">
+          <a href="picture/PHOTO1 (1).jpg" data-lightbox="gallery" data-title="Sample Photo 2">
+            <img src="picture/PHOTO1 (1).jpg" alt="Sample Photo 2">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="picture/PHOTO1 (2).jpg" data-lightbox="gallery" data-title="Sample Photo 3">
+            <img src="picture/PHOTO1 (2).jpg" alt="Sample Photo 3">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="picture/PHOTO1 (3).jpg" data-lightbox="gallery" data-title="Sample Photo 4">
+            <img src="picture/PHOTO1 (3).jpg" alt="Sample Photo 4">
+          </a>
+        </div>
+          <div class="swiper-slide">
+          <a href="picture/PHOTO1 (4).jpg" data-lightbox="gallery" data-title="Sample Photo 4">
+            <img src="picture/PHOTO1 (4).jpg" alt="Sample Photo 4">
           </a>
         </div>
       </div>
@@ -283,11 +388,47 @@
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
-  </section>
+  </section> 
+ 
+
+  <section id="gallery">
+  <div class="photo-grid">
+   
+    <div class="photo-item"><img src="picture/PHOTO1 (4).jpg" alt=""></div>
+    <div class="photo-item"><img src="picture/551976366_1250058600257272_4599494629527340218_n.jpg" alt=""></div>
+     <div class="photo-item"><img src="picture/552919861_1250144626915336_4117713290556486899_n.jpg" alt=""></div>
+    <div class="photo-item"><img src="picture/prego1.jpg" alt=""></div>
+   
+    <!-- more -->
+  </div>
+</section>
+
+  <!-- About Section -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about-container">
+    <img src="image/my photoshoot.PNG" alt="Photographer" class="about-photo">
+    <div class="about-text">
+      <h2>Hi I'm Prateek 👋</h2>
+      <p>
+        I’m a passionate photographer who believes in capturing moments that last a lifetime. 
+        My journey started with a small camera and a big dream — today, I specialize in weddings, 
+        portraits, and events, blending creativity with storytelling.  
+      </p>
+      <p>
+        Whether it’s the joy of a wedding, the laughter at a birthday, or the intimacy of a family portrait, 
+        I aim to freeze those emotions in timeless photographs.  
+      </p>
+      <p><strong>📍 Based in:</strong> Canberra, Australia</p>
+    </div>
+  </div>
+</section>
+
 
   <!-- Enquiry Section -->
 <section id="enquiry">
-  <h2>Enquiry Form</h2>
+  <h4 style="text-align: center; width: 100%;">If you’d like to check my availability or have any questions, please fill out the form below and I’ll get back to you as soon as possible.
+<br>Send me a message, and I’ll happily share my pricing and packages brochure with you. Bespoke packages can also be created to suit your day.</h4>
   <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
     <!-- Replace with your access key -->
     <input type="hidden" name="access_key" value="d8fdde63-1eb2-4b07-be0c-ffbcd13a0a08">
