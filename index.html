@@ -309,7 +309,7 @@
 
 
     /* Responsive adjustments */
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
       nav ul {
         display: none;
         flex-direction: column;
@@ -326,7 +326,50 @@
       .menu-toggle {
         display: block;
       }
-    }
+    } */
+
+
+    /* Hide toggle button on desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hero nav {
+    top: 10px;
+    left: 10px;
+    transform: none; /* no centering in mobile */
+  }
+
+  .hero nav ul {
+    display: none;            /* hide menu by default */
+    flex-direction: column;   /* stack links vertically */
+    gap: 1rem;
+    background: rgba(0,0,0,0.85); /* dark background */
+    padding: 1rem;
+    border-radius: 8px;
+    position: absolute;
+    top: 50px;  /* below the button */
+    left: 10px;
+    right: 10px;
+  }
+
+  .hero nav ul.show {
+    display: flex; /* show menu when toggle is clicked */
+  }
+
+  .menu-toggle {
+    display: block; /* show toggle on mobile */
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+}
   </style>
 </head>
 <body>
@@ -339,8 +382,7 @@
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#enquiry">Enquiry</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
   </nav>
   <!-- <div class="content">
