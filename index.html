@@ -23,13 +23,78 @@
       line-height: 1.6;
  
     }
-    header {
+
+    /* Hero Section */
+  .hero {
+    position: relative;
+    height: 100vh; /* full screen height */
+    background: url('picture/10.jpg') no-repeat center center/cover;
+  }
+
+/* Overlay Navbar */
+.hero nav {
+  position: absolute;   /* overlay on hero image */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero nav ul {
+  display: flex;          /* make items horizontal */
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  list-style: none;       /* remove bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+.hero nav li {
+  margin: 0;
+  padding: 0;
+}
+
+.hero nav a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  transition: color 0.3s;
+}
+
+.hero nav a:hover {
+  color: #D4A373; /* golden hover */
+}
+
+  /* Centered Hero Text (Optional) */
+  .hero .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .hero .content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero .content p {
+    font-size: 1.2rem;
+  }
+
+  
+    /* header {
       background: #222;
       color: #fff;
       padding: 20px 10px;
       text-align: center;
     }
-    /* --- Navbar --- */
+  
     nav {
        position: sticky;
     top: 0;
@@ -55,7 +120,7 @@
     nav ul li a:hover {
       text-decoration: underline;
       color: #D4A373;
-    }
+    } */
     /* Hamburger button */
     .menu-toggle {
       display: none;
@@ -265,7 +330,26 @@
   </style>
 </head>
 <body>
-  <header>
+
+  <div class="hero">
+ <nav>
+    <button class="menu-toggle">☰ Menu</button>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#enquiry">Enquiry</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+    </ul>
+  </nav>
+  <!-- <div class="content">
+    <h1>Frame Media Photography</h1>
+    <p>Capturing weddings, portraits & family stories</p>
+  </div> -->
+</div>
+
+  <!-- <header>
     <h1>Frame Media Photography</h1>
     <p> <i>Capturing Memories That Last Forever</i> </p>
   </header>
@@ -280,7 +364,7 @@
       <li><a href="#about">About Me</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
     </ul>
-  </nav>
+  </nav> -->
 
   <!-- Services Section with Swiper -->
   <section id="services">
@@ -321,13 +405,13 @@
           </a>
         </div>
         <div class="swiper-slide">
-          <a href="picture/520313448_1198208628775603_2475773152186309891_n.jpg" data-lightbox="gallery" data-title="Sample Photo 2">
-            <img src="picture/520313448_1198208628775603_2475773152186309891_n.jpg" alt="Sample Photo 2">
+          <a href="picture/4.jpg" data-lightbox="gallery" data-title="Sample Photo 2">
+            <img src="picture/4.jpg" alt="Sample Photo 2">
           </a>
         </div>
         <div class="swiper-slide">
-          <a href="picture/551653007_1250143850248747_413375132109636575_n.jpg" data-lightbox="gallery" data-title="Sample Photo 3">
-            <img src="picture/551653007_1250143850248747_413375132109636575_n.jpg" alt="Sample Photo 3">
+          <a href="picture/5.jpg" data-lightbox="gallery" data-title="Sample Photo 3">
+            <img src="picture/5.jpg" alt="Sample Photo 3">
           </a>
         </div>
         <div class="swiper-slide">
@@ -337,13 +421,13 @@
         </div>
         
           <div class="swiper-slide">
-          <a href="picture/event.jpg" data-lightbox="gallery" data-title="Sample Photo 1">
-            <img src="picture/event.jpg" alt="Sample Photo 1">
+          <a href="picture/2.jpg" data-lightbox="gallery" data-title="Sample Photo 1">
+            <img src="picture/2.jpg" alt="Sample Photo 1">
           </a>
         </div>
         <div class="swiper-slide">
-          <a href="picture/event1.jpg" data-lightbox="gallery" data-title="Sample Photo 2">
-            <img src="picture/event1.jpg" alt="Sample Photo 2">
+          <a href="picture/1.jpg" data-lightbox="gallery" data-title="Sample Photo 2">
+            <img src="picture/1.jpg" alt="Sample Photo 2">
           </a>
         </div>
         <div class="swiper-slide">
@@ -357,15 +441,15 @@
           </a>
         </div>
           <div class="swiper-slide">
-          <a href="picture/event3.jpg" data-lightbox="gallery" data-title="Sample Photo 4">
-            <img src="picture/event3.jpg" alt="Sample Photo 4">
+          <a href="picture/event.jpg" data-lightbox="gallery" data-title="Sample Photo 4">
+            <img src="picture/event.jpg" alt="Sample Photo 4">
           </a>
         </div>
 
 
           <div class="swiper-slide">
-          <a href="picture/PHOTO1 (1).jpg" data-lightbox="gallery" data-title="Sample Photo 2">
-            <img src="picture/PHOTO1 (1).jpg" alt="Sample Photo 2">
+          <a href="picture/3.jpg" data-lightbox="gallery" data-title="Sample Photo 2">
+            <img src="picture/3.jpg" alt="Sample Photo 2">
           </a>
         </div>
         <div class="swiper-slide">
@@ -394,7 +478,7 @@
   <section id="gallery">
   <div class="photo-grid">
    
-    <div class="photo-item"><img src="picture/PHOTO1 (4).jpg" alt=""></div>
+    <div class="photo-item"><img src="picture/6.jpg" alt=""></div>
     <div class="photo-item"><img src="picture/551976366_1250058600257272_4599494629527340218_n.jpg" alt=""></div>
      <div class="photo-item"><img src="picture/552919861_1250144626915336_4117713290556486899_n.jpg" alt=""></div>
     <div class="photo-item"><img src="picture/prego1.jpg" alt=""></div>
@@ -553,4 +637,3 @@
   </script>
 </body>
 </html>
-
