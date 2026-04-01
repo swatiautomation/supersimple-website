@@ -29,7 +29,8 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
     url('./images/6.jpg') no-repeat center center/cover;
   display: flex;
   align-items: center;
@@ -716,7 +717,7 @@ html {
 }
 
 .photo-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.6);
 }
 
 /* Hide toggle button on desktop */
