@@ -114,6 +114,61 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// ── Custom gallery lightbox ──
+const glModal = document.getElementById("galleryModal");
+if (glModal) {
+  const glImg     = glModal.querySelector(".gl-img");
+  const glCaption = glModal.querySelector(".gl-caption");
+  const glClose   = glModal.querySelector(".gl-close");
+  const glPrev    = glModal.querySelector(".gl-prev");
+  const glNext    = glModal.querySelector(".gl-next");
+  const allLinks  = () => [...document.querySelectorAll(".gallery-grid-item:not(.hidden) a")];
+  let currentSrc  = "";
+
+  function openModal(src, title) {
+    currentSrc = src;
+    glImg.src = src;
+    glImg.alt = title || "";
+    glCaption.textContent = title || "";
+    glModal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    glModal.classList.remove("open");
+    glImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  function navigate(dir) {
+    const links = allLinks();
+    const idx   = links.findIndex(a => a.href.includes(currentSrc.split("/").pop()));
+    const next  = links[(idx + dir + links.length) % links.length];
+    if (next) openModal(next.href, next.dataset.title);
+  }
+
+  document.querySelectorAll(".gallery-grid-item a").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      if (!link.closest(".gallery-grid-item").classList.contains("hidden")) {
+        openModal(link.href, link.dataset.title);
+      }
+    });
+  });
+
+  glClose.addEventListener("click", closeModal);
+  glModal.addEventListener("click", e => { if (e.target === glModal) closeModal(); });
+  glPrev.addEventListener("click", () => navigate(-1));
+  glNext.addEventListener("click", () => navigate(1));
+
+  document.addEventListener("keydown", e => {
+    if (!glModal.classList.contains("open")) return;
+    if (e.key === "Escape")      closeModal();
+    if (e.key === "ArrowLeft")   navigate(-1);
+    if (e.key === "ArrowRight")  navigate(1);
+  });
+}
+
 // ── Gallery filter ──
 const filterBtns = document.querySelectorAll(".filter-btn");
 const galleryItems = document.querySelectorAll(".gallery-grid-item");
