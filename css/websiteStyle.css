@@ -722,13 +722,13 @@ html {
   .hero nav ul {
     display: none;
     flex-direction: column;
-    gap: 0.75rem;
-    background: rgba(44, 62, 80, 0.95);
+    gap: 0.6rem;
+    background: rgba(44, 62, 80, 0.97);
     backdrop-filter: blur(20px);
     padding: 20px;
     border-radius: 15px;
     position: absolute;
-    top: 60px;
+    top: 65px;
     left: 0;
     right: 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -738,12 +738,20 @@ html {
   .hero nav ul.show {
     display: flex;
   }
+
+  .hero nav li {
+    width: 100%;
+  }
+
   .hero nav a {
-    padding: 12px 20px;
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
     border-radius: 10px;
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
-    margin: 5px 0;
+    font-size: 1rem;
+    box-sizing: border-box;
   }
 
   .menu-toggle {
