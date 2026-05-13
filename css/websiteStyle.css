@@ -1327,9 +1327,9 @@ html {
 
 .contact-detail {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 15px;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   color: var(--text-dark);
