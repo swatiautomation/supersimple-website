@@ -55,6 +55,28 @@ if (document.querySelector(".services-slider")) {
   });
 }
 
+// ── Swiper for Testimonials ──
+if (document.querySelector(".testimonials-slider")) {
+  new Swiper(".testimonials-slider", {
+    slidesPerView: 1,
+    spaceBetween: 25,
+    loop: true,
+    autoplay: { delay: 4500, disableOnInteraction: false },
+    navigation: {
+      nextEl: ".testimonials-slider .swiper-button-next",
+      prevEl: ".testimonials-slider .swiper-button-prev",
+    },
+    pagination: {
+      el: ".testimonials-slider .swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+}
+
 // ── Swiper for Gallery (home page only) ──
 if (document.querySelector(".gallery-slider")) {
   new Swiper(".gallery-slider", {
