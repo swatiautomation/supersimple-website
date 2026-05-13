@@ -108,7 +108,7 @@ const observer = new IntersectionObserver(function (entries) {
 }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".card, .photo-item, .stat-item, .faq-item, .gallery-grid-item, .testimonial-card, .contact-detail, .about-container").forEach(el => {
+  document.querySelectorAll(".card, .photo-item, .stat-item, .faq-item, .testimonial-card, .contact-detail, .about-container").forEach(el => {
     el.classList.add("fade-in");
     observer.observe(el);
   });
