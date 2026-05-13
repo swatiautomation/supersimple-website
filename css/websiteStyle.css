@@ -1224,6 +1224,20 @@ html {
   text-align: center;
 }
 
+.stats-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.stats-subheading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1238,6 +1252,12 @@ html {
   align-items: center;
 }
 
+.stat-icon {
+  font-size: 2rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.75rem;
+}
+
 .stat-number-wrap {
   font-family: 'Playfair Display', serif;
   font-size: 3.5rem;
@@ -1249,7 +1269,7 @@ html {
 .stat-item p {
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  opacity: 0.8;
+  opacity: 0.85;
   margin-top: 0.75rem;
 }
 
