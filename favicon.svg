@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="cl">
+      <circle cx="32" cy="32" r="21"/>
+    </clipPath>
+    <radialGradient id="bg" cx="40%" cy="35%">
+      <stop offset="0%" stop-color="#2a3f55"/>
+      <stop offset="100%" stop-color="#1a2a3a"/>
+    </radialGradient>
+    <radialGradient id="lens" cx="35%" cy="30%">
+      <stop offset="0%" stop-color="#e8bb88"/>
+      <stop offset="100%" stop-color="#c49060"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- Outer gold ring -->
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#d4a574" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Gold lens disc -->
+  <circle cx="32" cy="32" r="21" fill="url(#lens)"/>
+
+  <!-- 6-blade aperture: 3 rotated dark bars clipped to lens circle -->
+  <g clip-path="url(#cl)">
+    <rect x="29.5" y="11" width="5" height="42" rx="2.5" fill="#1a2a3a" transform="rotate(0 32 32)"/>
+    <rect x="29.5" y="11" width="5" height="42" rx="2.5" fill="#1a2a3a" transform="rotate(60 32 32)"/>
+    <rect x="29.5" y="11" width="5" height="42" rx="2.5" fill="#1a2a3a" transform="rotate(120 32 32)"/>
+  </g>
+
+  <!-- Centre aperture hole -->
+  <circle cx="32" cy="32" r="7.5" fill="#1a2a3a"/>
+
+  <!-- Inner gold ring -->
+  <circle cx="32" cy="32" r="5.5" fill="none" stroke="#d4a574" stroke-width="1.5"/>
+
+  <!-- Lens flare highlight -->
+  <circle cx="25" cy="25" r="3.5" fill="white" opacity="0.12"/>
+  <circle cx="24" cy="24" r="1.5" fill="white" opacity="0.18"/>
+</svg>
