@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// ── Custom gallery lightbox ──
+// ── Custom lightbox (works on any page with data-lb links) ──
 const glModal = document.getElementById("galleryModal");
 if (glModal) {
   const glImg     = glModal.querySelector(".gl-img");
@@ -122,8 +122,13 @@ if (glModal) {
   const glClose   = glModal.querySelector(".gl-close");
   const glPrev    = glModal.querySelector(".gl-prev");
   const glNext    = glModal.querySelector(".gl-next");
-  const allLinks  = () => [...document.querySelectorAll(".gallery-grid-item:not(.hidden) a")];
   let currentSrc  = "";
+
+  // Only include links that are not inside a hidden filtered item
+  const visibleLinks = () => [...document.querySelectorAll("a[data-lb]")].filter(a => {
+    const item = a.closest(".gallery-grid-item");
+    return !item || !item.classList.contains("hidden");
+  });
 
   function openModal(src, title) {
     currentSrc = src;
@@ -141,16 +146,18 @@ if (glModal) {
   }
 
   function navigate(dir) {
-    const links = allLinks();
-    const idx   = links.findIndex(a => a.href.includes(currentSrc.split("/").pop()));
-    const next  = links[(idx + dir + links.length) % links.length];
+    const links   = visibleLinks();
+    const filename = currentSrc.split("/").pop();
+    const idx     = links.findIndex(a => a.href.split("/").pop() === filename);
+    const next    = links[(idx + dir + links.length) % links.length];
     if (next) openModal(next.href, next.dataset.title);
   }
 
-  document.querySelectorAll(".gallery-grid-item a").forEach(link => {
+  document.querySelectorAll("a[data-lb]").forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
-      if (!link.closest(".gallery-grid-item").classList.contains("hidden")) {
+      const item = link.closest(".gallery-grid-item");
+      if (!item || !item.classList.contains("hidden")) {
         openModal(link.href, link.dataset.title);
       }
     });
@@ -158,14 +165,14 @@ if (glModal) {
 
   glClose.addEventListener("click", closeModal);
   glModal.addEventListener("click", e => { if (e.target === glModal) closeModal(); });
-  glPrev.addEventListener("click", () => navigate(-1));
-  glNext.addEventListener("click", () => navigate(1));
+  glPrev.addEventListener("click",  () => navigate(-1));
+  glNext.addEventListener("click",  () => navigate(1));
 
   document.addEventListener("keydown", e => {
     if (!glModal.classList.contains("open")) return;
-    if (e.key === "Escape")      closeModal();
-    if (e.key === "ArrowLeft")   navigate(-1);
-    if (e.key === "ArrowRight")  navigate(1);
+    if (e.key === "Escape")     closeModal();
+    if (e.key === "ArrowLeft")  navigate(-1);
+    if (e.key === "ArrowRight") navigate(1);
   });
 }
 

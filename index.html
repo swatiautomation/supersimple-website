@@ -39,11 +39,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <!-- Lightbox CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css"
-    />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
@@ -170,7 +165,7 @@
           <div class="swiper-slide">
             <a
               href="images/480553136_1101583295104804_1367013171470481480_n.jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 1"
             >
               <img
@@ -182,7 +177,7 @@
           <div class="swiper-slide">
             <a
               href="images/4.jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 2"
             >
               <img src="images/4.jpg" alt="Portrait photography session Canberra" />
@@ -191,7 +186,7 @@
           <div class="swiper-slide">
             <a
               href="images/5.jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 3"
             >
               <img src="images/5.jpg" alt="Family portrait photography Canberra" />
@@ -200,7 +195,7 @@
           <div class="swiper-slide">
             <a
               href="images/551976366_1250058600257272_4599494629527340218_n.jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 4"
             >
               <img
@@ -213,7 +208,7 @@
           <div class="swiper-slide">
             <a
               href="images/2.jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 1"
             >
               <img src="images/2.jpg" alt="Professional photography Canberra" />
@@ -222,7 +217,7 @@
           <div class="swiper-slide">
             <a
               href="images/1.jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 2"
             >
               <img src="images/1.jpg" alt="Portrait session by Frame Media Photography Canberra" />
@@ -231,7 +226,7 @@
           <div class="swiper-slide">
             <a
               href="images/prego.jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 3"
             >
               <img src="images/prego.jpg" alt="Maternity photography Canberra" />
@@ -240,7 +235,7 @@
           <div class="swiper-slide">
             <a
               href="images/prego1.jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 4"
             >
               <img src="images/prego1.jpg" alt="Pregnancy portrait photography Canberra" />
@@ -249,7 +244,7 @@
           <div class="swiper-slide">
             <a
               href="images/event.jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 4"
             >
               <img src="images/event.jpg" alt="Event photographer Canberra" />
@@ -259,7 +254,7 @@
           <div class="swiper-slide">
             <a
               href="images/3.jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 2"
             >
               <img src="images/3.jpg" alt="Birthday party photography Canberra" />
@@ -268,7 +263,7 @@
           <div class="swiper-slide">
             <a
               href="images/PHOTO1 (2).jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 3"
             >
               <img src="images/PHOTO1 (2).jpg" alt="Portrait photography by Frame Media Canberra" />
@@ -277,7 +272,7 @@
           <div class="swiper-slide">
             <a
               href="images/PHOTO1 (3).jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 4"
             >
               <img src="images/PHOTO1 (3).jpg" alt="Professional portrait photographer Canberra" />
@@ -286,7 +281,7 @@
           <div class="swiper-slide">
             <a
               href="images/PHOTO1 (4).jpg"
-              data-lightbox="gallery"
+              data-lb
               data-title="Sample Photo 4"
             >
               <img src="images/PHOTO1 (4).jpg" alt="Creative photography session Canberra ACT" />
@@ -301,20 +296,18 @@
 
     <section id="gallery">
       <div class="photo-grid">
-        <div class="photo-item"><img src="images/6.jpg" alt="Wedding photography Canberra" /></div>
+        <div class="photo-item"><a href="images/6.jpg" data-lb data-title="Wedding Photography — Canberra"><img src="images/6.jpg" alt="Wedding photography Canberra" /></a></div>
         <div class="photo-item">
-          <img
-            src="images/551976366_1250058600257272_4599494629527340218_n.jpg"
-            alt="Canberra event photographer Frame Media"
-          />
+          <a href="images/551976366_1250058600257272_4599494629527340218_n.jpg" data-lb data-title="Event Photography — Canberra">
+            <img src="images/551976366_1250058600257272_4599494629527340218_n.jpg" alt="Canberra event photographer Frame Media" />
+          </a>
         </div>
         <div class="photo-item">
-          <img
-            src="images/552919861_1250144626915336_4117713290556486899_n.jpg"
-            alt="Event photography Canberra ACT"
-          />
+          <a href="images/552919861_1250144626915336_4117713290556486899_n.jpg" data-lb data-title="Event Photography — Canberra ACT">
+            <img src="images/552919861_1250144626915336_4117713290556486899_n.jpg" alt="Event photography Canberra ACT" />
+          </a>
         </div>
-        <div class="photo-item"><img src="images/prego1.jpg" alt="Maternity photographer Canberra" /></div>
+        <div class="photo-item"><a href="images/prego1.jpg" data-lb data-title="Maternity Photography — Canberra"><img src="images/prego1.jpg" alt="Maternity photographer Canberra" /></a></div>
 
         <!-- more -->
       </div>
@@ -508,9 +501,19 @@
       <p>Based in Canberra, Australia</p>
     </footer>
 
+    <!-- Custom Lightbox Modal -->
+    <div id="galleryModal" class="gl-modal">
+      <button class="gl-close" aria-label="Close">&times;</button>
+      <button class="gl-prev" aria-label="Previous">&#10094;</button>
+      <button class="gl-next" aria-label="Next">&#10095;</button>
+      <div class="gl-img-wrap">
+        <img class="gl-img" src="" alt="" />
+      </div>
+      <p class="gl-caption"></p>
+    </div>
+
     <!-- JS Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
     <script src="js/websiteScript.js"></script>
   </body>
 </html>
