@@ -1255,12 +1255,16 @@ html {
 .stat-icon {
   font-size: 2rem;
   color: var(--accent-gold);
-  margin-bottom: 0.75rem;
+}
+
+.stat-icon-wrap {
   position: relative;
+  display: inline-block;
+  margin-bottom: 0.75rem;
   cursor: default;
 }
 
-.stat-icon[data-tooltip]::after {
+.stat-icon-wrap[data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: calc(100% + 10px);
@@ -1279,7 +1283,7 @@ html {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.stat-icon[data-tooltip]::before {
+.stat-icon-wrap[data-tooltip]::before {
   content: '';
   position: absolute;
   bottom: calc(100% + 4px);
@@ -1292,8 +1296,8 @@ html {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.stat-icon[data-tooltip]:hover::after,
-.stat-icon[data-tooltip]:hover::before {
+.stat-icon-wrap[data-tooltip]:hover::after,
+.stat-icon-wrap[data-tooltip]:hover::before {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
