@@ -1,40 +1,200 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>MY FIRST WEBPAGE</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & Booking | Frame Media Photography Canberra</title>
+    <meta name="description" content="Book a session or get in touch with Frame Media Photography in Canberra. Check availability, ask questions or send an enquiry." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.framemediaphotography.com/contact.html" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/websiteStyle.css" />
   </head>
   <body>
-    <header>
-      <h1>Contact</h1>
-      <nav>
-        <a href="#home">Home</a> | <a href="#about">About</a> |
-        <a href="#contact">Contact</a>
-      </nav>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a>|</li>
-          <li><a href="about.html">About</a>|</li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+
+    <!-- Sticky Header -->
+    <header class="sticky-header always-visible" id="stickyHeader">
+      <a href="index.html" class="sticky-logo">Frame <span>Media</span></a>
+      <button class="sticky-menu-toggle">☰ Menu</button>
+      <ul class="sticky-nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="#enquiry" class="sticky-cta">Book Now</a></li>
+      </ul>
     </header>
-    <main>
-      <section id="home">
-        <h2>Home</h2>
-        <p>This is the home section.</p>
-      </section>
-      <section id="about">
-        <h2>About</h2>
-        <p>This is the about section.</p>
-      </section>
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>This is the contact section.</p>
-      </section>
-    </main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <h1>Get In Touch</h1>
+      <p>Let's create something beautiful together</p>
+    </section>
+
+    <!-- Contact Info + Form -->
+    <section id="enquiry">
+      <div class="contact-grid">
+
+        <!-- Left: Contact Info -->
+        <div class="contact-info-box">
+          <h3>Contact Details</h3>
+
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong><br />
+              <a href="mailto:framemediaphotography@gmail.com">framemediaphotography@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Phone</strong><br />
+              <a href="tel:+61424919975">0424 919 975</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Location</strong><br />
+              Canberra, ACT, Australia
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Response Time</strong><br />
+              Within 24–48 hours
+            </div>
+          </div>
+
+          <div class="social-links" style="justify-content: flex-start; margin-top: 10px;">
+            <a href="https://www.facebook.com/photographyACT" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/framemediaphotography/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Right: Enquiry Form -->
+        <div>
+          <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="d8fdde63-1eb2-4b07-be0c-ffbcd13a0a08" />
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="tel" name="phone" placeholder="Your phone number" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <textarea name="message" placeholder="Tell me about your event or session..." rows="5"></textarea>
+            <input type="hidden" name="replyto" value="email" />
+            <button type="submit">Send Enquiry</button>
+          </form>
+          <p id="successMessage" style="display:none; color:green; margin-top:15px; font-family:'Poppins',sans-serif;">
+            ✅ Thank you! Your enquiry has been sent. I'll be in touch soon.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calendly Booking -->
+    <section class="calendly-section">
+      <h2>Check Availability</h2>
+      <p>Pick a date and time that works for you — book your session directly below.</p>
+      <div class="calendly-embed-wrapper">
+        <!-- Replace YOUR_CALENDLY_USERNAME with your actual Calendly username -->
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/YOUR_CALENDLY_USERNAME"
+          style="min-width:320px; height:700px;"
+        ></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How far in advance should I book?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            For weddings I recommend booking 6–12 months in advance as dates fill up quickly.
+            For portrait and family sessions, 2–4 weeks notice is usually enough.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How many photos will I receive?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Weddings typically include 400–700 fully edited images. Portrait sessions deliver
+            50–100 images, and event sessions vary based on duration and coverage.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How long until I receive my photos?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Portrait sessions are delivered within 1–2 weeks. Weddings and events are
+            delivered within 3–4 weeks. A sneak peek is usually shared within 48 hours.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you travel outside of Canberra?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes! I'm happy to travel within the ACT and surrounding regions including
+            Queanbeyan, Goulburn and Southern Highlands. Travel fees may apply for
+            locations beyond 50km from Canberra.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is your pricing?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Pricing depends on the type of session, duration and coverage required.
+            Send me an enquiry above and I'll share my full pricing and packages brochure.
+            Bespoke packages can also be created to suit your specific needs.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you provide both digital files and prints?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes — all packages include high-resolution digital files delivered via
+            an online gallery. Print packages and albums can be added to any booking.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <footer>
-      <p>&copy; 2026 My First Webpage</p>
+      <p>&copy; 2026 Frame Media Photography</p>
+      <p>Based in Canberra, Australia</p>
     </footer>
+
+    <script src="js/websiteScript.js"></script>
   </body>
 </html>
