@@ -954,6 +954,7 @@ html {
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  aspect-ratio: 4 / 3;
   transition: transform 0.4s ease;
 }
 
@@ -964,11 +965,13 @@ html {
 .gallery-grid-item a {
   display: block;
   position: relative;
+  height: 100%;
 }
 
 .gallery-grid-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
 }
