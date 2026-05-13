@@ -26,7 +26,7 @@
   .hero {
     position: relative;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('picture/6.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('../images/6.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -446,10 +446,11 @@
 }
 
 .social-links a:hover {
-  color: white;
-  background: var(--accent-gold);
+  color: var(--primary-color);
+  background: white;
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(212, 165, 116, 0.4);
+  box-shadow: 0 12px 30px rgba(44, 62, 80, 0.3),
+              0 0 0 3px var(--primary-color);
 }
 
 footer {
@@ -577,7 +578,13 @@ footer p {
     padding: 0 1rem; /* Adds breathing room on small screens */
   }
 
-  .about-photo,
+  .about-photo {
+    min-width: unset;
+    max-width: 260px;
+    width: 70%;
+    height: 300px;
+  }
+
   .about-text {
     min-width: 100%;
     max-width: 100%;
