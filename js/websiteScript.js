@@ -114,6 +114,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// ── Gallery filter ──
+const filterBtns = document.querySelectorAll(".filter-btn");
+const galleryItems = document.querySelectorAll(".gallery-grid-item");
+const galleryEmpty = document.querySelector(".gallery-empty");
+
+if (filterBtns.length > 0) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.dataset.filter;
+      let visible = 0;
+
+      galleryItems.forEach(item => {
+        const match = filter === "all" || item.dataset.category === filter;
+        item.classList.toggle("hidden", !match);
+        if (match) visible++;
+      });
+
+      if (galleryEmpty) galleryEmpty.style.display = visible === 0 ? "block" : "none";
+    });
+  });
+}
+
 // ── Stats counter animation ──
 const statNumbers = document.querySelectorAll(".stat-number");
 if (statNumbers.length > 0) {

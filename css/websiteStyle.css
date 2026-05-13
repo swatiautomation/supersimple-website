@@ -798,6 +798,115 @@ html {
   }
 }
 
+/* ── Gallery Page ── */
+#gallery-page {
+  background: #f8f9fa;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.filter-btn {
+  padding: 10px 28px;
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 62, 80, 0.25);
+}
+
+.gallery-grid {
+  columns: 4;
+  column-gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-grid-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.gallery-grid-item.hidden {
+  display: none;
+}
+
+.gallery-grid-item a {
+  display: block;
+  position: relative;
+}
+
+.gallery-grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44, 62, 80, 0.75), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.gallery-grid-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: white;
+  background: var(--accent-gold);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+@media (max-width: 1024px) {
+  .gallery-grid { columns: 3; }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid { columns: 2; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { columns: 1; }
+}
+
 /* ── Testimonials ── */
 #testimonials {
   background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a5c 100%);
